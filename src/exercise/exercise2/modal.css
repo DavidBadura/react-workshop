@@ -1,0 +1,22 @@
+.modal_layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal_box {
+    width: 400px;
+    padding: 20px;
+    background: #333333;
+    margin: 100px auto;
+    border-radius: 5px;
+}
+
+.modal_content {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: #3d3d3d solid 1px;
+}
