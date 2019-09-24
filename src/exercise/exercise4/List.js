@@ -19,7 +19,7 @@ const DATA = [
  */
 const style = {
     table: {
-        width: 400,
+        width: 800,
         margin: '0 auto'
     }
 };
@@ -32,8 +32,9 @@ const style = {
  *   Diese Daten sollen Suchbar (nach name) und sortierbar sein.
  *
  * Bonus Aufgabe:
- *   Lagere die hilfs render Methoden in eigene Komponenten aus.
- *   Füge PropTypes hinzu.
+ *   Wenn keine Artikel gefunden wurden, dann soll eine dementsprechende Information stattdessen angezeigt werden.
+ *   Zeige die nicht verfügbare Artikel gesondert an (zB. Rot).
+ *   Füge eine Selectbox hinzu, um nach verfügbaren Artikel zu filtern.
  */
 export default class List extends React.Component {
     state = {
@@ -66,7 +67,7 @@ export default class List extends React.Component {
     renderForm() {
         /*
          * Hint:
-         *   onChange={(event) => console.log(event.value)}
+         *   onChange={(event) => console.log(event.target.value)}
          */
         return (
             <form>
