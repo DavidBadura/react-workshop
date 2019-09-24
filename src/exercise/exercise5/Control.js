@@ -1,4 +1,5 @@
 import React from "react";
+import QrCode from "./QrCode";
 
 /*
  * Aufgabe:
@@ -9,7 +10,7 @@ import React from "react";
  *   Füge zwei Felder hinzu, womit die Hintergrund- und Vordergrundfarbe konfiguriert werden kann.
  *   Diese Werte müssen dann an die QrCode Komponente weiter gegeben werden.
  */
-export default class QrCode extends React.Component {
+export default class Control extends React.Component {
     render() {
         return (
             <React.Fragment>

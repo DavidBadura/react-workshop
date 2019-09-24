@@ -12,8 +12,8 @@ export default function () {
                         Es soll automatisch ein QR-Code erzeugt werden, wenn das Textfeld befüllt wird.
                     </p>
                     <pre>
-                        src/exercise4/List.js<br/>
-                        src/exercise4/List.js
+                        src/exercise5/Control.js<br/>
+                        src/exercise5/QrCode.js
                     </pre>
                 </Exercise>
             </div>
