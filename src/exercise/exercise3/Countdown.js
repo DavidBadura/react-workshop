@@ -4,15 +4,13 @@ import React from 'react';
  * Countdown
  *
  * Aufgabe:
- *   Die angezeigte Box soll von 100 auf 0 runterzählen.
+ *   Die angezeigte Box soll von 10 auf 0 runterzählen.
  *   Wenn der Countdown bei 0 (oder drunter) Angekommen ist, soll stattdessen "Ring!" angezeigt werden.
  *   Das Interval soll registriert werden, wenn die Komponente angezeigt wird.
  *   Und soll wieder Entfernt werden, wenn die Komponente nicht mehr benutzt wird,
  *
  * Bonus Aufgabe:
- *   Man soll über Attr einen Startwert definieren können.
- *   Benutze dazu `props`.
- *   Hint: https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops
+ *   Füge ein Reset-Button hinzu, um den State wieder auf 10 zu setzen.
  */
 export default class Countdown extends React.Component {
     state = {
@@ -27,7 +25,7 @@ export default class Countdown extends React.Component {
          * Führt den callback jede Sekunde aus.
          * Mit `clearInterval(this.interval)` kann das interval beendet werden.
          */
-        this.interval = setInterval(function () {
+        this.interval = setInterval(() => {
 
         }, 1000);
     }

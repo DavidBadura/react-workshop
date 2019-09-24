@@ -9,7 +9,7 @@ export default function () {
             <div className="App-row">
                 <Exercise>
                     <p>
-                        Baue einen Countdown, der von 100 nach 0 runterzählt. Bei 0 angekommen soll "Ring!" angezeigt werden.
+                        Baue einen Countdown, der von 10 nach 0 runterzählt. Bei 0 angekommen soll "Ring!" angezeigt werden.
                     </p>
                     <pre>
                         src/exercise3/Countdown.js<br/>
