@@ -25,6 +25,7 @@ a {
 nav ul {
   list-style: none;
   padding: 0;
+  text-align: left;
 }
 
 .App-exercise {

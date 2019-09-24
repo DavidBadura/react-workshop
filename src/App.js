@@ -6,6 +6,7 @@ import Exercise1 from './exercise/exercise1';
 import Exercise2 from './exercise/exercise2';
 import Exercise3 from './exercise/exercise3';
 import Exercise4 from './exercise/exercise4';
+import Exercise5 from './exercise/exercise5';
 
 function Intro() {
     return (
@@ -45,6 +46,7 @@ function App() {
                     <Route path="/exercise-2" exact component={Exercise2}/>
                     <Route path="/exercise-3" exact component={Exercise3}/>
                     <Route path="/exercise-4" exact component={Exercise4}/>
+                    <Route path="/exercise-5" exact component={Exercise5}/>
                 </header>
             </div>
         </Router>

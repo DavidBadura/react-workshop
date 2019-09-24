@@ -30,6 +30,10 @@ const style = {
  * Aufgabe:
  *   Die Daten sollen in der Tabelle dargestellt werden.
  *   Diese Daten sollen Suchbar (nach name) und sortierbar sein.
+ *
+ * Bonus Aufgabe:
+ *   Lagere die hilfs render Methoden in eigene Komponenten aus.
+ *   Füge PropTypes hinzu.
  */
 export default class List extends React.Component {
     state = {
@@ -37,9 +41,6 @@ export default class List extends React.Component {
         sort: ''
     };
 
-    /*
-     * So soll die Komponente gerendert werden.
-     */
     render() {
 
         /*
@@ -51,7 +52,6 @@ export default class List extends React.Component {
          *   "string".includes("string")
          *   "string".localeCompare("string")
          */
-
         return (
             <div>
                 {this.renderForm()}
