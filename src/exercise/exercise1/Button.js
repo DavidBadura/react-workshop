@@ -20,13 +20,14 @@ export default class Button extends React.Component {
      * soll aufrufen werden, wenn ein click passiert.
      */
     handleClick = () => {
+        const step = this.props.step || 1;
 
         /*
          * setzt den neuen state. `this.state.counter` ist nur lesend!
          * Sobald der state sich geändert hat, wird render neu aufgerufen.
          */
         this.setState({
-            counter: 5
+            counter: this.state.counter + step
         });
     };
 
@@ -34,12 +35,6 @@ export default class Button extends React.Component {
      * Bei jeder State Änderung wird die render Methode aufgerufen!
      */
     render() {
-
-        /*
-         * Mit `this.state.*` kann man lesend auf die states zugreifen
-         */
-        let foo = 'Click me!';
-
         /*
          * Mit "{}" wechselt man in den Javascript Kontext. Man kann innerhalb wieder mit "<>" in JSX wechseln.
          *
@@ -50,7 +45,11 @@ export default class Button extends React.Component {
          *   usw.
          */
         return (
-            <button>{foo}</button>
+            <button onClick={this.handleClick}>{this.state.counter}</button>
         );
+    }
+
+    renderHeadline() {
+        return <h1>Test</h1>;
     }
 }

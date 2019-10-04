@@ -1,7 +1,8 @@
 import React from 'react';
-import Button from "./ModalButton";
+import ModalButton from "./ModalButton";
 import Exercise from "../../components/Exercise";
 import {Link} from "react-router-dom";
+import Button from "../exercise1/Button";
 
 export default function () {
     return (
@@ -19,7 +20,22 @@ export default function () {
                 </Exercise>
             </div>
             <div className="App-row">
-                <Button/>
+                <ModalButton>
+                    Test 123
+                    <Button step={1}/>
+                </ModalButton>
+
+                <ModalButton>
+                    Foo Bar
+                    <Button step={5}/>
+
+                    <ModalButton>
+                        Inception
+                        <Button step={10}/>
+
+                    </ModalButton>
+
+                </ModalButton>
             </div>
             <div className="App-row">
                 <Link to="/">Zurück</Link>

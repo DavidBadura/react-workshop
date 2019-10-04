@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "./Modal";
+import Button from "../exercise1/Button";
 
 /*
  * ModalButton
@@ -14,21 +15,35 @@ export default class ModalButton extends React.Component {
     };
 
     handleOpen = () => {
-        alert("this button doesn't work :-(");
+        this.setState({
+            open: true
+        });
     };
 
     handleClose = () => {
-        // todo...
+        this.setState({
+            open: false
+        });
     };
 
     render() {
-        const open = false;
-
         return (
             <React.Fragment>
                 <button onClick={this.handleOpen}>Open!</button>
-                {open && <Modal></Modal>}
+                {this.renderModal()}
             </React.Fragment>
+        );
+    }
+
+    renderModal() {
+        if (!this.state.open) {
+            return null;
+        }
+
+        return (
+            <Modal onClose={this.handleClose}>
+                {this.props.children}
+            </Modal>
         );
     }
 }

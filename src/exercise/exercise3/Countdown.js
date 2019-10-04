@@ -14,32 +14,58 @@ import React from 'react';
  */
 export default class Countdown extends React.Component {
     state = {
-        counter: 100
+        counter: 3
+    };
+
+    start = () => {
+        if (this.interval) {
+            return;
+        }
+
+        this.interval = setInterval(() => {
+            if (this.state.counter === 1) {
+                clearInterval(this.interval);
+            }
+
+            this.setState({
+                counter: this.state.counter - 1
+            });
+        }, 1000);
+    };
+
+    stop = () => {
+        clearInterval(this.interval);
+        this.interval = null;
+    };
+
+    handleReset = () => {
+        this.setState({
+            counter: 10
+        });
+
+        this.start();
     };
 
     /*
      * Wird aufgerufen, nachdem die Komponente in den DOM hinzugefügt wurde
      */
     componentDidMount() {
-        /*
-         * Führt den callback jede Sekunde aus.
-         * Mit `clearInterval(this.interval)` kann das interval beendet werden.
-         */
-        this.interval = setInterval(() => {
-
-        }, 1000);
+        this.start();
     }
 
     /*
      * Wird aufgerufen, bevor die Komponente aus dem DOM entfernt wird
      */
     componentWillUnmount() {
-
+        this.stop();
     }
 
     render() {
         return (
-            <div>{this.state.counter}</div>
+            <React.Fragment>
+                <div>{this.state.counter === 0 ? 'Ring!' : this.state.counter}</div>
+                <button onClick={this.handleReset}>reset</button>
+            </React.Fragment>
         );
     }
 }

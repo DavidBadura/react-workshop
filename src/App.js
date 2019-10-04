@@ -50,6 +50,7 @@ function App() {
                     <Route path="/exercise-3" exact component={Exercise3}/>
                     <Route path="/exercise-4" exact component={Exercise4}/>
                     <Route path="/exercise-5" exact component={Exercise5}/>
+                    <Route path="/page/:id" exact component={Exercise5}/>
                 </header>
             </div>
         </Router>

@@ -44,6 +44,23 @@ export default class List extends React.Component {
 
     render() {
 
+        const data = DATA.filter(article => {
+            return article.name.toLowerCase().includes(this.state.search.toLowerCase())
+                || article.category.toLowerCase().includes(this.state.search.toLowerCase());
+        });
+
+        data.sort((a, b) => {
+            if (this.state.sort === 'price') {
+                return a.price - b.price;
+            }
+
+            if (this.state.sort === 'name') {
+                return a.name.localeCompare(b.name);
+            }
+
+            return 0;
+        });
+
         /*
          * JS Hints:
          *   [].filter(callback)
@@ -56,7 +73,7 @@ export default class List extends React.Component {
         return (
             <div>
                 {this.renderForm()}
-                {this.renderTable(DATA)}
+                {this.renderTable(data)}
             </div>
         );
     }
@@ -71,8 +88,12 @@ export default class List extends React.Component {
          */
         return (
             <form>
-                <input name="search" type="text"/>
-                <select name="sort">
+                <input
+                    name="search"
+                    type="text"
+                    onChange={(event) => this.setState({search: event.target.value})}
+                />
+                <select name="sort" onChange={(event) => this.setState({sort: event.target.value})}>
                     <option value="">nothing</option>
                     <option value="name">sort by name</option>
                     <option value="price">sort by price</option>
@@ -101,9 +122,9 @@ export default class List extends React.Component {
     renderElement(data) {
         return (
             <tr key={data.name}>
-                <td>Foo</td>
-                <td>Bar</td>
-                <td>Baz</td>
+                <td>{data.name}</td>
+                <td>{data.category}</td>
+                <td>{data.price} €</td>
             </tr>
         );
     }

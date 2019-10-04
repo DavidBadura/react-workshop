@@ -16,7 +16,10 @@ export default function () {
                 </Exercise>
             </div>
             <div className="App-row">
-                <Button/>
+                <Button step={5} />
+                <Button step={1} />
+                <Button step={7} />
+                <Button step={100} />
             </div>
             <div className="App-row">
                 <Link to="/">Zurück</Link>
