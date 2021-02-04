@@ -3,7 +3,7 @@ import Exercise from "../../components/Exercise";
 import {Link} from "react-router-dom";
 import List from "./List";
 
-export default function () {
+function Exercise4 () {
     return (
         <div className="App-container">
             <div className="App-row">
@@ -25,3 +25,5 @@ export default function () {
         </div>
     );
 }
+
+export default Exercise4;

@@ -1,23 +1,23 @@
 import React from 'react';
 import Exercise from "../../components/Exercise";
 import {Link} from "react-router-dom";
-import Countdown from "./Countdown";
+import Overview from "./Overview";
 
-function Exercise3() {
+function Exercise6() {
     return (
         <div className="App-container">
             <div className="App-row">
                 <Exercise>
                     <p>
-                        Baue einen Countdown, der von 10 nach 0 runterzählt. Bei 0 angekommen soll "Ring!" angezeigt werden.
+                        Verwende eine beliebige API um Daten anzuzeigen. Bewerte diese Beiträge.
                     </p>
                     <pre>
-                        src/exercise3/Countdown.js<br/>
+                        src/exercise6/Overview.js
                     </pre>
                 </Exercise>
             </div>
             <div className="App-row">
-                <Countdown/>
+                <Overview/>
             </div>
             <div className="App-row">
                 <Link to="/">Zurück</Link>
@@ -26,4 +26,4 @@ function Exercise3() {
     );
 }
 
-export default Exercise3;
+export default Exercise6;
